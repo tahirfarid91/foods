@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_from: 2022-09-28
+  date_to: 2022-09-28
+  time_from: 2022-09-28 10:26:38
+  time_to: 2022-09-28 10:26:38
+  offer_price: 9.99
+
+two:
+  date_from: 2022-09-28
+  date_to: 2022-09-28
+  time_from: 2022-09-28 10:26:38
+  time_to: 2022-09-28 10:26:38
+  offer_price: 9.99

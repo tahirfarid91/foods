@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 1
+  status: MyString
+  placed_at: 2022-09-28 10:14:51
+  received_at: 2022-09-28 10:14:51
+  total: 9.99
+  date: 2022-09-28
+
+two:
+  customer_id: 1
+  status: MyString
+  placed_at: 2022-09-28 10:14:51
+  received_at: 2022-09-28 10:14:51
+  total: 9.99
+  date: 2022-09-28

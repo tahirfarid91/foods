@@ -7,8 +7,6 @@ class CreateOffers < ActiveRecord::Migration[7.0]
       t.timestamp :time_to
       t.decimal :offer_price
       t.timestamps
-      t.string :offerable_type
-      t.bigint :offerable_id
     end
   end
 end

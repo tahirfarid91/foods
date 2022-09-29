@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_28_111013) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_29_075818) do
   create_table "admins", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -25,10 +25,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_111013) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "menu_id"
   end
 
-  create_table "customers", id: false, force: :cascade do |t|
+  create_table "customers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -53,7 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_111013) do
     t.string "designation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "resturant_id"
+    t.integer "Resturant_id", null: false
+    t.index ["Resturant_id"], name: "index_employees_on_Resturant_id"
   end
 
   create_table "food_items", force: :cascade do |t|
@@ -62,8 +62,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_111013) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "category_id"
-    t.integer "order_id"
+    t.integer "category_id", null: false
+    t.integer "order_id", null: false
+    t.index ["category_id"], name: "index_food_items_on_category_id"
+    t.index ["order_id"], name: "index_food_items_on_order_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -73,7 +75,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_111013) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "resturant_id"
+    t.integer "resturant_id", null: false
+    t.index ["resturant_id"], name: "index_menus_on_resturant_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -84,15 +87,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_111013) do
     t.decimal "offer_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "offerable_type"
-    t.bigint "offerable_id"
   end
 
   create_table "options", force: :cascade do |t|
     t.string "option"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "food_item_id"
+    t.integer "food_item_id", null: false
+    t.index ["food_item_id"], name: "index_options_on_food_item_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -103,32 +105,44 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_111013) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "customer_id"
+    t.integer "customer_id", null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
-  create_table "payments", id: false, force: :cascade do |t|
-    t.integer "id"
+  create_table "payments", force: :cascade do |t|
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "order_id"
+    t.string "method"
+    t.integer "amount"
+    t.string "paid_by"
+    t.integer "order_id", null: false
+    t.index ["order_id"], name: "index_payments_on_order_id"
   end
 
   create_table "ratings", force: :cascade do |t|
     t.decimal "rating"
     t.text "remarks"
     t.date "date"
-    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "order_id", null: false
+    t.index ["order_id"], name: "index_ratings_on_order_id"
   end
 
-  create_table "resturants", id: false, force: :cascade do |t|
-    t.integer "id"
+  create_table "resturants", force: :cascade do |t|
     t.string "name"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "employees", "Resturants"
+  add_foreign_key "food_items", "categories"
+  add_foreign_key "food_items", "orders"
+  add_foreign_key "menus", "resturants"
+  add_foreign_key "options", "food_items"
+  add_foreign_key "orders", "customers"
+  add_foreign_key "payments", "orders"
+  add_foreign_key "ratings", "orders"
 end

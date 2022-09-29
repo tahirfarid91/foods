@@ -12,7 +12,6 @@ class CreateEmployees < ActiveRecord::Migration[7.0]
       t.integer :cnic
       t.string :designation
       t.timestamps
-      t.integer :resturant_id, foreign_key: true
     end
   end
 end

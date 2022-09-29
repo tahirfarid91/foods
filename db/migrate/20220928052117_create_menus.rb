@@ -6,7 +6,6 @@ class CreateMenus < ActiveRecord::Migration[7.0]
       t.text :discription
       t.string :status
       t.timestamps
-      t.integer :resturant_id, foreign_key: true
     end
   end
 end

@@ -1,6 +1,10 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
 
+  ActiveAdmin.setup do |config|
+    config.comments = false
+  end
+  
   index do
     selectable_column
     id_column

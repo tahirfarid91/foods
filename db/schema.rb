@@ -77,7 +77,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_05_064010) do
     t.string "designation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "resturant_id", null: false
     t.string "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -86,6 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_05_064010) do
     t.integer "invited_by_id"
     t.string "invited_by_type"
     t.string "encrypted_password"
+    t.integer "resturant_id"
     t.index ["invitation_token"], name: "index_employees_on_invitation_token", unique: true
     t.index ["resturant_id"], name: "index_employees_on_resturant_id"
   end

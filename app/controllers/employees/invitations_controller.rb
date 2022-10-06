@@ -4,4 +4,7 @@ class Employees::InvitationsController < Devise::InvitationsController
     devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :cell])
   end
 
+  def after_invite_path_for(resource)
+    admin_employees_path
+  end
 end

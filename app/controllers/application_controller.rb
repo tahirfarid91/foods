@@ -7,5 +7,4 @@ class ApplicationController < ActionController::Base
   def authenticate_inviter!
     authenticate_admin_user!(force: true)
   end
-
 end

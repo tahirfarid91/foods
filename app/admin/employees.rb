@@ -2,6 +2,10 @@ ActiveAdmin.register Employee do
   
   permit_params :first_name, :last_name, :email, :encrypted_password, :cell, :gender, :age, :date_of_joining, :address, :cnic, :designation, :resturant_id
 
+  action_item :view_site do
+    link_to "Invite", new_employee_invitation_path
+  end
+
   index do 
     selectable_column
     column :id
@@ -9,10 +13,7 @@ ActiveAdmin.register Employee do
     column :last_name
     column :cell
     column :designation
-    column :resturant_id
     column :email
-    column :created_at
-    column :updated_at
     actions
    end
 

@@ -15,16 +15,44 @@ ActiveAdmin.register Employee do
     column :designation
     column :email
     actions
-   end
+  end
 
-    filter :id
-    filter :first_name
-    filter :last_name
-    filter :cell
-    filter :designation
-    filter :resturant_id
-    filter :email
-    filter :created_at
-    filter :updated_at
+  show do
+    attributes_table do
+      row :first_name
+      row :last_name
+      row :email
+      row :resturant_id
+      row :created_at
+      row :updated_at
+      row :invitation_token
+      row :invitation_created_at
+      row :invitation_sent_at
+      row :invitation_accepted_at
+      row :invited_by
+    end
+    active_admin_comments
+  end
+
+  form do |f|
+    inputs "Details" do
+      input :first_name
+      input :last_name
+      input :email
+      input :resturant_id
+      input :password
+      actions
+    end
+  end
+
+  filter :id
+  filter :first_name
+  filter :last_name
+  filter :cell
+  filter :designation
+  filter :resturant_id
+  filter :email
+  filter :created_at
+  filter :updated_at
  
 end

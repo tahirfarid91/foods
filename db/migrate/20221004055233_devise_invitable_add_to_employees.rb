@@ -1,12 +1,22 @@
 class DeviseInvitableAddToEmployees < ActiveRecord::Migration[7.0]
-  def change
-    add_column :employees, :invitation_token, :string
-    add_column :employees, :invitation_created_at, :datetime
-    add_column :employees, :invitation_sent_at, :datetime
-    add_column :employees, :invitation_accepted_at, :datetime
-    add_column :employees, :invitation_limit, :integer
-    add_column :employees, :invited_by_id, :integer
-    add_column :employees, :invited_by_type, :string
-    add_index :employees, :invitation_token, unique: true
+  def up
+    change_table :employees do |t|
+      t.string     :invitation_token
+      t.datetime   :invitation_created_at
+      t.datetime   :invitation_sent_at
+      t.datetime   :invitation_accepted_at
+      t.integer    :invitation_limit
+      t.references :invited_by, polymorphic: true
+      t.integer    :invitations_count, default: 0
+      t.index      :invitation_token, unique: true # for invitable
+      t.index      :invited_by_id
+    end
+  end
+
+  def down
+    change_table :employees do |t|
+      t.remove_references :invited_by, polymorphic: true
+      t.remove :invitations_count, :invitation_limit, :invitation_sent_at, :invitation_accepted_at, :invitation_token, :invitation_created_at
+    end
   end
 end

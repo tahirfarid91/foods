@@ -10,14 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_29_104514) do
-  create_table "admins", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.date "date_of_joining"
-    t.string "email"
+ActiveRecord::Schema[7.0].define(version: 2022_10_10_102713) do
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.integer "resource_id"
+    t.string "author_type"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
+  end
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
   create_table "categories", force: :cascade do |t|
@@ -54,8 +71,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_104514) do
     t.string "designation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "Resturant_id", null: false
-    t.index ["Resturant_id"], name: "index_employees_on_Resturant_id"
+    t.string "encrypted_password"
+    t.integer "resturant_id"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer "invitation_limit"
+    t.string "invited_by_type"
+    t.integer "invited_by_id"
+    t.integer "invitations_count", default: 0
+    t.index ["invitation_token"], name: "index_employees_on_invitation_token", unique: true
+    t.index ["invited_by_id"], name: "index_employees_on_invited_by_id"
+    t.index ["invited_by_type", "invited_by_id"], name: "index_employees_on_invited_by"
+    t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
+    t.index ["resturant_id"], name: "index_employees_on_resturant_id"
   end
 
   create_table "food_items", force: :cascade do |t|
@@ -142,7 +175,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_104514) do
   end
 
   add_foreign_key "categories", "menus"
-  add_foreign_key "employees", "Resturants"
+  add_foreign_key "employees", "resturants"
   add_foreign_key "food_items", "categories"
   add_foreign_key "food_items", "orders"
   add_foreign_key "menus", "resturants"

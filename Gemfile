@@ -29,7 +29,7 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
-
+gem 'slim-rails'
 gem 'activeadmin'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'devise_invitable', '~> 2.0.0'

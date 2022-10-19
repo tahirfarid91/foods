@@ -11,3 +11,5 @@ Rails.application.config.assets.version = "1.0"
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+Rails.application.config.assets.precompile += %w( _all-skins.css AdminLTE.css bootstrap.css font-awesome.css ionicons.css)
+Rails.application.config.assets.precompile += %w( adminlte.js bootstrap.js demo.js home_js.js)

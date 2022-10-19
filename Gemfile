@@ -24,7 +24,7 @@ gem "turbo-rails"
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
-gem 'adminlte-rails'
+
 source 'https://rails-assets.org/' do 
   gem 'rails-assets-adminlte'
 end

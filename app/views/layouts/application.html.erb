@@ -21,6 +21,9 @@
   </head>
 
   <body>
-    <%= yield %>
+  <%= render partial: "/home/header" %>
+  <%= render partial: "/home/sidebar" %>
+  <%= yield %>
+  <%= render partial: "/home/footer" %>
   </body>
 </html>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :employees, 
     controllers: { invitations: 'employees/invitations', sessions: 'employees/sessions' }
 
+  resources :menus
   get "home", to: "home#index"
  
   root 'home#index'

@@ -1,5 +1,4 @@
 class MenusController < ApplicationController
-
   def index
     if employee_signed_in? 
        @menus = Menu.all
@@ -27,6 +26,6 @@ class MenusController < ApplicationController
 
   private
     def menu_params
-      params.require(:menu).permit(:title, :status, :resturant_id)
+      params.require(:menu).permit(:title, :resturant_id)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_10_102713) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_063307) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -105,12 +105,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_102713) do
 
   create_table "menus", force: :cascade do |t|
     t.string "title"
-    t.string "type"
     t.text "discription"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "resturant_id", null: false
+    t.integer "price"
     t.index ["resturant_id"], name: "index_menus_on_resturant_id"
   end
 

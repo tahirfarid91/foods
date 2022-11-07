@@ -1,0 +1,37 @@
+<br>
+<div class="col-lg-5 mx-lg-auto">
+  <div class="card shadow">
+    <div class="card-header">
+      <h2 class="card-title text-center">Add Menu</h2>
+    </div>
+    <div class="card-body">
+      <%= form_for @menu do |f| %>
+
+      <div class="form-group">
+        <%= f.label :title, class: 'mb-2' %>
+        <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control form-control-lg" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price, class: 'mb-2' %>
+        <%= f.text_field :price, autofocus: true, autocomplete: "price", class: "form-control form-control-lg" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :discription, class: 'mb-2' %>
+        <%= f.text_field :discription, autofocus: true, autocomplete: "discription", class: "form-control form-control-lg" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :status, class: 'mb-2' %>
+        <%= f.text_field :status, autofocus: true, autocomplete: "status", class: "form-control form-control-lg" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :resturant_id, class: 'mb-2' %>
+        <%= f.text_field :resturant_id, autofocus: true, autocomplete: "resturant_id", class: "form-control form-control-lg" %>
+      </div>
+      <div class="actions">
+      <%= f.submit "Submit", class: "btn btn-primary btn-lg" %>
+      </div>
+      
+      <% end %>
+    </div>
+  </div>
+</div>

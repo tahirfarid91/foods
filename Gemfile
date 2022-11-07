@@ -21,6 +21,16 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+gem "bcrypt", "~> 3.1.7" 
+
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'font-awesome-sass'
+
+source 'https://rails-assets.org/' do 
+  gem 'rails-assets-adminlte'
+end
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -29,7 +39,7 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
-
+gem 'slim-rails'
 gem 'activeadmin'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'devise_invitable', '~> 2.0.0'
@@ -38,7 +48,8 @@ gem 'devise_invitable', '~> 2.0.0'
 gem 'thin', '~> 1.8', '>= 1.8.1'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
-
+gem 'capistrano-bower'
+gem 'capistrano'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 

@@ -1,5 +1,4 @@
 ActiveAdmin.register Employee do
-  
   permit_params :first_name, :last_name, :email, :encrypted_password, :cell, :gender, :age, :date_of_joining, :address, :cnic, :designation, :resturant_id
 
   action_item :view_site do
@@ -54,5 +53,4 @@ ActiveAdmin.register Employee do
   filter :email
   filter :created_at
   filter :updated_at
- 
 end

@@ -1,11 +1,5 @@
-
-<!-- Main wrapper - style you can find in pages.scss -->
-<!-- ============================================================== -->
 <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
   data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-  <!-- ============================================================== -->
-  <!-- Topbar header - style you can find in pages.scss -->
-  <!-- ============================================================== -->
   <header class="topbar" data-navbarbg="skin5">
       <nav class="navbar top-navbar navbar-expand-md navbar-dark">
           <div class="navbar-header" data-logobg="skin6">
@@ -22,28 +16,11 @@
                       <img src="assets/plugins/images/logo-text.png" alt="homepage" />
                   </span>
               </a>
-              <!-- ============================================================== -->
-              <!-- End Logo -->
-              <!-- ============================================================== -->
-              <!-- ============================================================== -->
-              <!-- toggle and nav items -->
-              <!-- ============================================================== -->
               <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
                   href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
           </div>
-          <!-- ============================================================== -->
-          <!-- End Logo -->
-          <!-- ============================================================== -->
           <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-              
-              <!-- ============================================================== -->
-              <!-- Right side toggle and nav items -->
-              <!-- ============================================================== -->
               <ul class="navbar-nav ms-auto d-flex align-items-center">
-
-                  <!-- ============================================================== -->
-                  <!-- Search -->
-                  <!-- ============================================================== -->
                   <li class=" in">
                       <form role="search" class="app-search d-none d-md-block me-3">
                           <input type="text" placeholder="Search..." class="form-control mt-0">
@@ -52,27 +29,16 @@
                           </a>
                       </form>
                   </li>
-                  <!-- ============================================================== -->
-                  <!-- User profile and search -->
-                  <!-- ============================================================== -->
                   <li>
                       <a class="profile-pic" href="#">
                           <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36"
                               class="img-circle"><span class="text-white font-medium"><% if employee_signed_in? %><%= current_employee.email %><% end %></span></a>
                   </li>
-                  <!-- ============================================================== -->
-                  <!-- User profile and search -->
-                  <!-- ============================================================== -->
               </ul>
           </div>
       </nav>
   </header>
-  <!-- ============================================================== -->
-  <!-- End Topbar header -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Left Sidebar - style you can find in sidebar.scss  -->
-  <!-- ============================================================== -->
+
   <aside class="left-sidebar" data-sidebarbg="skin6">
       <!-- Sidebar scroll-->
       <div class="scroll-sidebar">
@@ -134,41 +100,18 @@
                           Upgrade to Pro</a>
                   </li>
               </ul>
-
           </nav>
-          <!-- End Sidebar navigation -->
       </div>
-      <!-- End Sidebar scroll-->
   </aside>
-  <!-- ============================================================== -->
-  <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Page wrapper  -->
-  <!-- ============================================================== -->
   <div class="page-wrapper">
-      <!-- ============================================================== -->
-      <!-- Bread crumb and right sidebar toggle -->
-      <!-- ============================================================== -->
       <div class="page-breadcrumb bg-white">
           <div class="row align-items-center">
               <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                   <h4 class="page-title">Home</h4>
               </div>
           </div>
-          <!-- /.col-lg-12 -->
       </div>
-      <!-- ============================================================== -->
-      <!-- End Bread crumb and right sidebar toggle -->
-      <!-- ============================================================== -->
-      <!-- ============================================================== -->
-      <!-- Container fluid  -->
-      <!-- ============================================================== -->
       <div class="container-fluid">
-         
-          <!-- ============================================================== -->
-          <!-- Recent Comments -->
-          <!-- ============================================================== -->
           <div class="row">
               <!-- .col -->
               <div class="col-md-12 col-lg-8 col-sm-12">
@@ -315,49 +258,30 @@
                                   </a>
                               </li>
                               <li>
-                                  <div class="call-chat">
-                                      <button class="btn btn-success text-white btn-circle btn" type="button">
-                                          <i class="fas fa-phone"></i>
-                                      </button>
-                                      <button class="btn btn-info btn-circle btn" type="button">
-                                          <i class="far fa-comments text-white"></i>
-                                      </button>
-                                  </div>
-                                  <a href="javascript:void(0)" class="d-flex align-items-center"><img
-                                          src="assets/plugins/images/users/hritik.jpg" alt="user-img" class="img-circle">
-                                      <div class="ms-2">
-                                          <span class="text-dark">John
-                                              Abraham<small class="d-block text-success">online</small></span>
-                                      </div>
+                                <div class="call-chat">
+                                    <button class="btn btn-success text-white btn-circle btn" type="button">
+                                        <i class="fas fa-phone"></i>
+                                    </button>
+                                    <button class="btn btn-info btn-circle btn" type="button">
+                                        <i class="far fa-comments text-white"></i>
+                                    </button>
+                                </div>
+                                <a href="javascript:void(0)" class="d-flex align-items-center"><img
+                                        src="assets/plugins/images/users/hritik.jpg" alt="user-img" class="img-circle">
+                                    <div class="ms-2">
+                                        <span class="text-dark">John
+                                          Abraham<small class="d-block text-success">online</small></span>
+                                    </div>
                                   </a>
                               </li>
                           </ul>
                       </div>
                   </div>
               </div>
-              <!-- /.col -->
           </div>
       </div>
-      <!-- ============================================================== -->
-      <!-- End Container fluid  -->
-      <!-- ============================================================== -->
-      <!-- ============================================================== -->
-      <!-- footer -->
-      <!-- ============================================================== -->
       <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
               href="https://www.wrappixel.com/">wrappixel.com</a>
       </footer>
-      <!-- ============================================================== -->
-      <!-- End footer -->
-      <!-- ============================================================== -->
   </div>
-  <!-- ============================================================== -->
-  <!-- End Page wrapper  -->
-  <!-- ============================================================== -->
 </div>
-<!-- ============================================================== -->
-<!-- End Wrapper -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- All Jquery -->
-<!-- ============================================================== -->

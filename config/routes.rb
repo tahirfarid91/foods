@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -10,5 +9,4 @@ Rails.application.routes.draw do
   get "home", to: "home#index"
  
   root 'home#index'
-
 end

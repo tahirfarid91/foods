@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-
   def index
   end
 
@@ -14,6 +13,4 @@ class CategoriesController < ApplicationController
 
   def create
   end
-
 end
-

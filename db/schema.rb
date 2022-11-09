@@ -98,9 +98,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_063307) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id", null: false
-    t.integer "order_id", null: false
     t.index ["category_id"], name: "index_food_items_on_category_id"
-    t.index ["order_id"], name: "index_food_items_on_order_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -177,7 +175,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_063307) do
   add_foreign_key "categories", "menus"
   add_foreign_key "employees", "resturants"
   add_foreign_key "food_items", "categories"
-  add_foreign_key "food_items", "orders"
   add_foreign_key "menus", "resturants"
   add_foreign_key "options", "food_items"
   add_foreign_key "orders", "customers"

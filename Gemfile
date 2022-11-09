@@ -21,8 +21,6 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
-gem "bcrypt", "~> 3.1.7" 
-
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'font-awesome-sass'

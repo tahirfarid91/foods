@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     controllers: { invitations: 'employees/invitations', sessions: 'employees/sessions' }
 
   resources :menus
+  resources :food_items
+  resources :categories
+  
   get "home", to: "home#index"
  
   root 'home#index'

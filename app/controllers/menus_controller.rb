@@ -8,7 +8,11 @@ class MenusController < ApplicationController
   end
 
   def new
-    @menu = Menu.new
+    if employee_signed_in? 
+      @menu = Menu.new
+   else
+     redirect_to new_employee_session_path 
+   end
   end
 
   def show
@@ -18,7 +22,7 @@ class MenusController < ApplicationController
     @menu = Menu.new(menu_params)
 
     if @menu.save
-      redirect_to root_path
+      redirect_to new_category_path
     else
       render 'new'
     end

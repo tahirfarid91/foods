@@ -16,3 +16,4 @@ import "waves";
 import "app-style-switcher";
 import "custom";
 import "bootstrap.bundle";
+import "active_admin";

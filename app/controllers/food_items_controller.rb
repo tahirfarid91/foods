@@ -10,7 +10,7 @@ class FoodItemsController < ApplicationController
   def create
     @food_item = FoodItem.new(food_item_params)
     if @food_item.save
-      redirect_to root_path
+      redirect_to new_food_item_path
     else
       render 'new'
     end

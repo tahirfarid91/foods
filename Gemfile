@@ -45,6 +45,8 @@ gem 'devise_invitable', '~> 2.0.0'
 # gem "kredis"
 gem 'thin', '~> 1.8', '>= 1.8.1'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+
+gem "cocoon"
 # gem "bcrypt", "~> 3.1.7"
 gem 'capistrano-bower'
 gem 'capistrano'

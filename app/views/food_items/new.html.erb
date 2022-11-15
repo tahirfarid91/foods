@@ -3,19 +3,6 @@
   <header class="topbar" data-navbarbg="skin5">
       <nav class="navbar top-navbar navbar-expand-md navbar-dark">
           <div class="navbar-header" data-logobg="skin6">
-              <a class="navbar-brand" href="home">
-                  <!-- Logo icon -->
-                  <b class="logo-icon">
-                      <!-- Dark Logo icon -->
-                      <img src="assets/plugins/images/logo-icon.png" alt="homepage" />
-                  </b>
-                  <!--End Logo icon -->
-                  <!-- Logo text -->
-                  <span class="logo-text">
-                      <!-- dark Logo text -->
-                      <img src="assets/plugins/images/logo-text.png" alt="homepage" />
-                  </span>
-              </a>
               <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
                   href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
           </div>
@@ -30,9 +17,7 @@
                       </form>
                   </li>
                   <li>
-                      <a class="profile-pic" href="#">
-                          <img src="assets/plugins/images/users/varun.jpg" alt="user-img" width="36"
-                              class="img-circle"><span class="text-white font-medium"><% if employee_signed_in? %><%= current_employee.email %><% end %></span></a>
+                     <span class="text-white font-medium"><% if employee_signed_in? %><%= current_employee.email %><% end %></span>
                   </li>
               </ul>
           </div>
@@ -47,7 +32,7 @@
               <ul id="sidebarnav">
                   <!-- User Profile-->
                   <li class="sidebar-item pt-2">
-                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="home"
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<%= root_path %>"
                           aria-expanded="false">
                           <i class="far fa-clock" aria-hidden="true"></i>
                           <span class="hide-menu">Home</span>
@@ -67,82 +52,61 @@
                       <% end %>
                   </li>
                   <li class="sidebar-item">
-                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<%= menus_path %>"
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<%= new_menu_path %>"
                           aria-expanded="false">
                           <i class="fas fa-columns" aria-hidden="true"></i>
                           <span class="hide-menu">Menu</span>
                       </a>
                   </li>
                   <li class="sidebar-item">
-                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<%= new_category_path %>"
                           aria-expanded="false">
-                          <i class="fa fa-globe" aria-hidden="true"></i>
-                          <span class="hide-menu">Google Map</span>
+                          <i class="fab fa-readme" aria-hidden="true"></i>
+                          <span class="hide-menu">Category</span>
                       </a>
                   </li>
                   <li class="sidebar-item">
-                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html"
+                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<%= new_food_item_path %>"
                           aria-expanded="false">
-                          <i class="fa fa-columns" aria-hidden="true"></i>
-                          <span class="hide-menu">Blank Page</span>
+                          <i class="fas fa-coffee" aria-hidden="true"></i>
+                          <span class="hide-menu">Food Item</span>
                       </a>
-                  </li>
-                  <li class="sidebar-item">
-                      <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
-                          aria-expanded="false">
-                          <i class="fa fa-info-circle" aria-hidden="true"></i>
-                          <span class="hide-menu">Error 404</span>
-                      </a>
-                  </li>
-                  <li class="text-center p-20 upgrade-btn">
-                      <a href="https://www.wrappixel.com/templates/ampleadmin/"
-                          class="btn d-grid btn-danger text-white" target="_blank">
-                          Upgrade to Pro</a>
                   </li>
               </ul>
           </nav>
       </div>
   </aside>
   <div class="page-wrapper">
-      <div class="page-breadcrumb bg-white">
-          <div class="row align-items-center">
-              <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                  <h4 class="page-title">Menu</h4>
-              </div>
-          </div>
-      </div>
       <div class="container-fluid">
           <div class="row">
               <div class="col-md-12">
-                  <div class="card white-box p-0">
-                  <br>
+                  <div class="card white-box p-0"><br>
                   <div class="col-lg-5 mx-lg-auto">
                     <div class="card shadow">
                       <div class="card-header">
                         <h2 class="card-title text-center">Add Food Item</h2>
                       </div>
                       <div class="card-body">
-                  
+        
                         <%= form_for @food_item do |f| %>
+                            <div class="form-group">
+                            <%= f.label :category_id, class: 'mb-2' %>
+                            <%= f.collection_select :category_id , Category.order(:title), :id, :title, {:prompt => 'Choose a category'}, class: "form-control form-control-lg" %>
+                          </div>
                           <div class="form-group">
                             <%= f.label :name, class: 'mb-2' %>
-                            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control form-control-lg" %>
+                            <%= f.text_field :name, autofocus: true, class: "form-control form-control-lg" %>
                           </div>
                           <div class="form-group">
                           <%= f.label :price, class: 'mb-2' %>
-                          <%= f.text_field :price, autofocus: true, autocomplete: "price", class: "form-control form-control-lg" %>
+                          <%= f.text_field :price, autofocus: true, class: "form-control form-control-lg" %>
                         </div>
-                          <div class="form-group">
-                          <%= f.label :category_id, class: 'mb-2' %>
-                          <%= f.text_field :category_id, autofocus: true, autocomplete: "category_id", class: "form-control form-control-lg" %>
-                        </div><br>
                           <div class="actions">
                             <%= f.submit "Submit", class: "btn btn-primary btn-lg" %>
                           </div>
                         <% end %>
                   
-                        <br> <%= link_to "Back", new_category_path %>
-                      </div>
+                       </div>
                     </div>
                   </div>
                   

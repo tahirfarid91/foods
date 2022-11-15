@@ -22,7 +22,7 @@ class MenusController < ApplicationController
     @menu = Menu.new(menu_params)
 
     if @menu.save
-      redirect_to new_category_path
+      redirect_to new_menu_path
     else
       render 'new'
     end

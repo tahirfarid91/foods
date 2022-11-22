@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   resources :menus
   resources :food_items
   resources :categories
-  
-  get "home", to: "home#index"
- 
+   
   root 'home#index'
 end

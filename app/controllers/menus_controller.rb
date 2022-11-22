@@ -1,18 +1,11 @@
 class MenusController < ApplicationController
+  before_action :authenticate_employee!
   def index
-    if employee_signed_in? 
-       @menus = Menu.all
-    else
-      redirect_to new_employee_session_path 
-    end
+    @menus = Menu.all
   end
 
   def new
-    if employee_signed_in? 
-      @menu = Menu.new
-   else
-     redirect_to new_employee_session_path 
-   end
+    @menu = Menu.new
   end
 
   def show

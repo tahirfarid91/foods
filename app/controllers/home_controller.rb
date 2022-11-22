@@ -1,9 +1,5 @@
 class HomeController < ApplicationController
-  def index
-    if employee_signed_in? 
-      render 'home/index'
-    else
-      redirect_to new_employee_session_path 
-    end 
-  end
+	before_action :authenticate_employee!
+	def index
+	end
 end

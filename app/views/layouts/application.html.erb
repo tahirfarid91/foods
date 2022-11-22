@@ -11,6 +11,24 @@
   </head>
 
   <body>
-    <%= yield %>
+  
+    <% if not employee_signed_in? %> 
+      <%= render 'employees/sessions/new' %>
+    <% else %>
+
+      <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+  
+          <%= render 'shared/header' %>
+          <%= render 'shared/sidebar' %>
+          <%= yield %>
+
+        <div class="page-wrapper">
+
+          <%= render 'shared/footer' %>
+        
+        </div>
+      </div>
+    <% end %>
+
   </body>
 </html>

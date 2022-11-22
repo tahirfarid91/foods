@@ -1,4 +1,5 @@
 class FoodItemsController < ApplicationController
+  before_action :authenticate_employee!
   def index
     @food_items = FoodItem.all
   end

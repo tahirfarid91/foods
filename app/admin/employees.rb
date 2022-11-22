@@ -38,7 +38,7 @@ ActiveAdmin.register Employee do
       input :first_name
       input :last_name
       input :email
-      input :resturant
+      input :resturant_id
       input :encrypted_password
       actions
     end

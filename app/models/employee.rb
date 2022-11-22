@@ -4,5 +4,4 @@ class Employee < ApplicationRecord
   devise :database_authenticatable,
         :recoverable, :rememberable, 
         :invitable, :validatable, :registerable
-
 end

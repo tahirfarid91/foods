@@ -1,5 +1,6 @@
 class MenusController < ApplicationController
   before_action :authenticate_employee!
+  
   def index
     @menus = Menu.all
   end

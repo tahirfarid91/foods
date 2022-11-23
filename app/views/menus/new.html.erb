@@ -1,31 +1,42 @@
-<div class="page-wrapper">
-  <div class="container-fluid align-center">
-    <div class="col-md-12">
-      <div class="card white-box p-0"><br>
-        <div class="col-lg-5 mx-lg-auto">
-          <div class="card shadow">
-            <div class="card-header">
-              <h2 class="card-title text-center">Add Menu for <%= current_employee.resturant.name %></h2>
-            </div>
-            <div class="card-body">
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
 
-              <%= form_for @menu do |f| %>
-                <div class="form-group">
-                  <%= f.hidden_field :resturant_id, autofocus: true, class: "form-control form-control-lg", value:current_employee.resturant.id, :readonly => true %>                         
-                </div> 
-                <div class="form-group">
-                  <%= f.label :title, class: 'mb-2' %>
-                  <%= f.text_field :title, autofocus: true, class: "form-control form-control-lg" %>
-                </div> 
-                <div class="actions">
-                  <%= f.submit "Submit", class: "btn btn-primary btn-lg" %>
-                </div>
-              <% end %>
+<%= render 'shared/header' %>
+<%= render 'shared/sidebar' %>
 
+  <div class="page-wrapper">
+    <div class="container-fluid align-center">
+      <div class="col-md-12">
+        <div class="card white-box p-0"><br>
+          <div class="col-lg-5 mx-lg-auto">
+            <div class="card shadow">
+              <div class="card-header">
+                <h2 class="card-title text-center">Add Menu for <%= current_employee.resturant.name %></h2>
+              </div>
+              <div class="card-body">
+
+                <%= form_for @menu do |f| %>
+                  <div class="form-group">
+                    <%= f.hidden_field :resturant_id, autofocus: true, class: "form-control form-control-lg", value:current_employee.resturant.id, :readonly => true %>                         
+                  </div> 
+                  <div class="form-group">
+                    <%= f.label :title, class: 'mb-2' %>
+                    <%= f.text_field :title, autofocus: true, class: "form-control form-control-lg" %>
+                  </div> 
+                  <div class="actions">
+                    <%= f.submit "Submit", class: "btn btn-primary btn-lg" %>
+                  </div>
+                <% end %>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="page-wrapper">
+
+    <%= render 'shared/footer' %>
+  
+    </div>
 </div>

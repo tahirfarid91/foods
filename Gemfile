@@ -21,8 +21,6 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
-gem "bcrypt", "~> 3.1.7" 
-
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
@@ -47,7 +45,9 @@ gem 'devise_invitable', '~> 2.0.0'
 # gem "kredis"
 gem 'thin', '~> 1.8', '>= 1.8.1'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+
+gem "cocoon"
+gem "bcrypt", "~> 3.1.7"
 gem 'capistrano-bower'
 gem 'capistrano'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

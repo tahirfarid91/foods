@@ -1,10 +1,8 @@
 class MenusController < ApplicationController
+  before_action :authenticate_employee!
+  
   def index
-    if employee_signed_in? 
-       @menus = Menu.all
-    else
-      redirect_to new_employee_session_path 
-    end
+    @menus = Menu.all
   end
 
   def new
@@ -18,7 +16,7 @@ class MenusController < ApplicationController
     @menu = Menu.new(menu_params)
 
     if @menu.save
-      redirect_to root_path
+      redirect_to new_menu_path
     else
       render 'new'
     end

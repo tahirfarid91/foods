@@ -17,6 +17,11 @@
     <%= f.text_field :last_name %>
   </div> 
 
+    <div class="field"><br />
+    <%= f.label :resturant_id %><br />
+    <%= f.collection_select :resturant_id, Resturant.order(:name), :id, :name, {:prompt => 'Choose a Resturant'} %>
+  </div>
+
   <% if f.object.class.require_password_on_accepting %>
     <div class="field">
       <%= f.label :password %><br />

@@ -3,6 +3,8 @@ class MenusController < ApplicationController
   
   def index
     @menus = Menu.all
+    @categories = Category.all
+    @food_items = FoodItem.all
   end
 
   def new

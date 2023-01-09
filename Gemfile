@@ -47,6 +47,7 @@ gem 'thin', '~> 1.8', '>= 1.8.1'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 
 gem "cocoon"
+gem 'ransack'
 gem "bcrypt", "~> 3.1.7"
 gem 'capistrano-bower'
 gem 'capistrano'
